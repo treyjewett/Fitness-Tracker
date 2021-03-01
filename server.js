@@ -16,17 +16,17 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/FitnessTracker', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/Fitness-Tracker', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
-    UseFindandModify: false
+    UseFindAndModify: false
 }, () => {
     console.log("Mongoose is connected")
 });
 
-app.use(require("./routes/api-routes"));
-app.use(require("./routes/html-routes"));
+// app.use(require("./routes/api-routes"));
+// app.use(require("./routes/html-routes"));
 
 app.listen(PORT, () => {
     console.log(`App is running on port ${PORT}`)
