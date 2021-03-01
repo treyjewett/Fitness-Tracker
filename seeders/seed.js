@@ -1,6 +1,7 @@
 let mongoose = require("mongoose");
 let db = require("../models");
 require("dotenv").config();
+console.log(process.env.ATLAS_URI);
 
 let workoutSeed = [
   {
