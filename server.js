@@ -20,7 +20,7 @@ mongoose.connect(process.env.ATLAS_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
-    UseFindAndModify: false
+    useFindAndModify: false
 }, () => {
     console.log("Mongoose is connected")
 });
