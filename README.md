@@ -14,7 +14,27 @@ Log workouts and view workout progress with MongoDB, Express, and Morgan Middlew
 - [Lessons Learned](#lessons-learned:)
 
 ## Code Utilized
+
+This application was made using:
+MongoDB | Mongoose | AtlasDB | Node.js | Express.js | Dotenv | Heroku
+
 ## What to Expect
+
+
 ## Website
+
+This application is deployed on Heroku.
+
+<img src="public\assets\img\homepage.png" alt="Rendered Home Page">
+
+<img src="public\assets\img\totals.png" alt="Rendered Totals Charts">
+
+To visit the application, please follow the link below:
+
+<a href="https://russells-fitness-tracker.herokuapp.com/" target="_blank">View the Fitness Tracker here!</a>
+
 ## License
+
+This project is using MIT.
+
 ## Lessons Learned
