@@ -50,9 +50,10 @@ router.get("/api/workout/range", (req, res) => {
         }
     ])
     // Add sort function to limit workout instances to previous 7 days.
-    .sort( { "_id": 1, "day": 1 } )
+    .sort( { "day": -1, "_id": -1 } )
     .limit(7)
     .then(dbWorkout => {
+        dbWorkout.reverse();
         res.json(dbWorkout);
     }).catch(err => {
         res.json(err);
