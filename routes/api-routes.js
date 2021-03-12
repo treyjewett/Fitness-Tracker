@@ -26,6 +26,7 @@ router.post("/api/workout", (req, res) => {
 // Continue Exercise
 router.put("/api/workout/:id", (req, res) => {
     Workout.updateOne({
+        // Select the id of the workout to update, then push the updates.
         _id: req.params.id
     }, {
         $push: { exercises: req.body }
@@ -42,12 +43,17 @@ router.get("/api/workout/range", (req, res) => {
     Workout.find({})
     Workout.aggregate([
         {
+            // Add a field to total the duration of all the workouts
             $addFields: {
                 totalDuration: { $sum: "$exercises.duration" }
             }
         }
     ])
+    // Add sort function to limit workout instances to previous 7 days.
+    .sort( { "day": -1, "_id": -1 } )
+    .limit(7)
     .then(dbWorkout => {
+        dbWorkout.reverse();
         res.json(dbWorkout);
     }).catch(err => {
         res.json(err);
